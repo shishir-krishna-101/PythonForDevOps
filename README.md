@@ -90,6 +90,29 @@ PythonForDevOps/
     └── 08-github-repo-compliance-auditor/             <-- GitHub organization DevSecOps compliance auditor
         ├── README.md
         └── github_compliance_auditor.py
+│
+└── interview-prep/                                    <-- 20 Comprehensive DevOps/SRE Interview Coding Challenges
+    ├── README.md                                      # Master catalog with questions, concepts & links
+    ├── 01_parse_nginx_access_logs.py
+    ├── 02_extract_failed_ssh_attempts.py
+    ├── 03_mask_sensitive_data_in_logs.py
+    ├── 04_find_and_delete_large_old_files.py
+    ├── 05_disk_usage_threshold_alert.py
+    ├── 06_calculate_directory_size.py
+    ├── 07_validate_and_patch_json_yaml.py
+    ├── 08_diff_two_config_files.py
+    ├── 09_flatten_nested_dict.py
+    ├── 10_check_service_endpoints_health.py
+    ├── 11_tcp_port_scanner_and_checker.py
+    ├── 12_retry_decorator_with_exponential_backoff.py
+    ├── 13_find_unattached_ebs_volumes.py
+    ├── 14_ec2_auto_start_stop_by_tags.py
+    ├── 15_find_crashing_k8s_pods.py
+    ├── 16_clean_dangling_docker_images.py
+    ├── 17_semantic_version_comparator.py
+    ├── 18_cidr_ip_range_validator.py
+    ├── 19_merge_sorted_log_streams.py
+    └── 20_rate_limiter_token_bucket.py
 ```
 
 ---
@@ -140,6 +163,35 @@ The [**`14-real-world-devops-scripts/`**](./14-real-world-devops-scripts) direct
 | [**06 - Database Backup & S3 Encryptor**](./14-real-world-devops-scripts/06-database-s3-backup-encryptor) | Creates Gzip-compressed, AES-256 (Fernet) zero-knowledge encrypted DB dumps to S3 with SHA-256. | `cryptography`, `gzip`, `boto3` |
 | [**07 - Docker Registry Garbage Collector**](./14-real-world-devops-scripts/07-docker-registry-pruner) | Prunes ephemeral CI images while strictly protecting SemVer tags and active production digests. | `re`, `datetime` |
 | [**08 - GitHub Org Compliance Auditor**](./14-real-world-devops-scripts/08-github-repo-compliance-auditor) | Audits organization repos for branch protections, secret scanning, and Dependabot compliance. | `requests`, `logging` |
+
+---
+
+## 🎯 DevOps & SRE Interview Preparation Suite
+
+The [**`interview-prep/`**](./interview-prep) directory contains **20 battle-tested coding interview questions** frequently asked in senior DevOps, SRE, Platform, and Cloud Engineer technical rounds (Amazon, Google, Meta, Microsoft, Netflix, Stripe):
+
+- **[01. Parse Nginx Access Logs & 5xx Error Rates](./interview-prep/01_parse_nginx_access_logs.py)**
+- **[02. Detect SSH Brute Force Attacks from auth.log](./interview-prep/02_extract_failed_ssh_attempts.py)**
+- **[03. Mask Sensitive Data & API Keys in Log Streams](./interview-prep/03_mask_sensitive_data_in_logs.py)**
+- **[04. Find & Purge Large Stale Files with Dry-Run](./interview-prep/04_find_and_delete_large_old_files.py)**
+- **[05. Host Multi-Partition Disk Usage Monitor](./interview-prep/05_disk_usage_threshold_alert.py)**
+- **[06. Recursive Directory Disk Usage Calculator](./interview-prep/06_calculate_directory_size.py)**
+- **[07. Validate & Dynamically Patch Kubernetes Manifests](./interview-prep/07_validate_and_patch_json_yaml.py)**
+- **[08. Deep Configuration Diff Engine (Staging vs Prod)](./interview-prep/08_diff_two_config_files.py)**
+- **[09. Flatten & Unflatten Nested Cloud Dictionaries](./interview-prep/09_flatten_nested_dict.py)**
+- **[10. Concurrent Service Health Checker with Latency](./interview-prep/10_check_service_endpoints_health.py)**
+- **[11. Fast Multi-Threaded TCP Port Scanner & Probe](./interview-prep/11_tcp_port_scanner_and_checker.py)**
+- **[12. Custom @retry Decorator with Exponential Backoff & Jitter](./interview-prep/12_retry_decorator_with_exponential_backoff.py)**
+- **[13. AWS FinOps Unattached EBS Volume Auditor](./interview-prep/13_find_unattached_ebs_volumes.py)**
+- **[14. Automated EC2 Start/Stop Scheduler by Tags](./interview-prep/14_ec2_auto_start_stop_by_tags.py)**
+- **[15. Kubernetes CrashLoopBackOff & Error Pod Scanner](./interview-prep/15_find_crashing_k8s_pods.py)**
+- **[16. Prune Dangling Docker Images & Reclaim Storage](./interview-prep/16_clean_dangling_docker_images.py)**
+- **[17. Custom Semantic Versioning (SemVer) Comparator](./interview-prep/17_semantic_version_comparator.py)**
+- **[18. CIDR Subnet Matcher & IP Security Filter (Bitwise)](./interview-prep/18_cidr_ip_range_validator.py)**
+- **[19. K-Way Merge Sorted Log Streams with O(1) Memory (Heap)](./interview-prep/19_merge_sorted_log_streams.py)**
+- **[20. Thread-Safe Token Bucket Rate Limiter](./interview-prep/20_rate_limiter_token_bucket.py)**
+
+See the [Interview Prep README](./interview-prep/README.md) for full question statements, concepts tested, and constraints.
 
 ---
 
