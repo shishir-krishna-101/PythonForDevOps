@@ -1,15 +1,22 @@
 # DevOps & SRE Python Coding Interview Preparation
 
-Welcome to the **DevOps & SRE Interview Preparation Suite**. This directory contains the most frequent, high-impact Python coding problems asked during technical rounds for **DevOps Engineer**, **Site Reliability Engineer (SRE)**, **Platform Engineer**, and **Cloud Infrastructure Engineer** roles at top-tier companies (Amazon, Google, Meta, Microsoft, Netflix, Stripe, Uber).
-
-Every question includes:
-- The **exact question and problem statement** documented at the top of each Python script.
-- A **production-grade, typed Python solution** with defensive error handling.
-- A built-in **runnable verification test suite** in `if __name__ == "__main__":`.
+Welcome to the **DevOps & SRE Interview Preparation Suite**. This directory contains **30 high-impact Python coding problems** covering the 4 core dimensions evaluated in technical rounds for **DevOps Engineer**, **Site Reliability Engineer (SRE)**, **Platform Engineer**, and **Cloud Infrastructure Engineer** roles at top-tier companies (Google SRE, Meta Production Engineer, Amazon SysDE/DevOps, Netflix, Stripe, Uber).
 
 ---
 
-## 📋 Comprehensive Interview Question Catalog
+## 📖 Must-Read: How to Code Independently with Only Official Docs
+
+> **Stop trying to memorize code!**
+> Read our in-depth handbook: [**`HOW_TO_LEARN_AND_CODE_FROM_OFFICIAL_DOCS.md`**](./HOW_TO_LEARN_AND_CODE_FROM_OFFICIAL_DOCS.md)
+> It teaches you:
+> 1. The **5-Step Mental Framework** to break down any coding prompt into an input-output contract.
+> 2. How to navigate `docs.python.org` in 30 seconds to find function signatures and canonical recipes.
+> 3. The **Interactive Python REPL** secret weapons (`help()`, `dir()`, `type()`, `python -i`).
+> 4. The DevOps Standard Library "When to Use What" mental map.
+
+---
+
+## 📋 Comprehensive Interview Question Catalog (30 Questions)
 
 ### Domain 1: Log Parsing & Threat Detection
 
@@ -69,7 +76,7 @@ Every question includes:
 
 ---
 
-### Domain 7: Algorithms & Infrastructure Utilities
+### Domain 7: DevOps Algorithms & Data Structures
 
 | # | Question Title | Concepts Tested | Solution File |
 |:---|:---|:---|:---|
@@ -77,23 +84,62 @@ Every question includes:
 | **18** | **CIDR Subnet Matcher & IP Security Filter** | `ipaddress` module and 32-bit bitwise masking (`ip & mask`) | [`18_cidr_ip_range_validator.py`](./18_cidr_ip_range_validator.py) |
 | **19** | **K-Way Merge Sorted Log Streams with O(1) Memory** | Min-Heap (`heapq`), generator pipelines, external sorting | [`19_merge_sorted_log_streams.py`](./19_merge_sorted_log_streams.py) |
 | **20** | **Thread-Safe Token Bucket Rate Limiter** | Lazy token refill, thread concurrency locks, monotonic clocks | [`20_rate_limiter_token_bucket.py`](./20_rate_limiter_token_bucket.py) |
+| **21** | **Microservice & Terraform Dependency Resolver (DAG)** | Kahn's Algorithm (Topological Sort), `collections.deque`, cycle detection | [`21_topological_sort_dag_dependency_resolver.py`](./21_topological_sort_dag_dependency_resolver.py) |
+| **22** | **Thread-Safe LRU Cache with Time-To-Live (TTL)** | `collections.OrderedDict`, O(1) access/eviction, monotonic expiration | [`22_lru_cache_with_ttl.py`](./22_lru_cache_with_ttl.py) |
+| **23** | **Git Bisect Simulation (Binary Search for Bad Commit)** | O(log N) binary search on monotonic test results | [`23_git_bisect_binary_search.py`](./23_git_bisect_binary_search.py) |
+
+---
+
+### Domain 8: Infrastructure Low-Level System Design (LLD / OOP)
+
+| # | Question Title | Concepts Tested | Solution File |
+|:---|:---|:---|:---|
+| **24** | **Object-Oriented Software Load Balancer** | Round Robin, Weighted Round Robin, Least Connections, OOP design | [`24_software_load_balancer.py`](./24_software_load_balancer.py) |
+| **27** | **Transactional In-Memory Key-Value Store (Mini Redis)** | Nested transaction stack, ACID rollback, dictionary delta layers | [`27_in_memory_kv_store_with_transactions.py`](./27_in_memory_kv_store_with_transactions.py) |
+| **30** | **Standard 5-Field Cron Expression Parser & Matcher** | String parsing, range/step expansion, `datetime.weekday()` math | [`30_cron_expression_parser.py`](./30_cron_expression_parser.py) |
+
+---
+
+### Domain 9: Advanced Concurrency, Async & Live Debugging
+
+| # | Question Title | Concepts Tested | Solution File |
+|:---|:---|:---|:---|
+| **25** | **Multi-Threaded Producer-Consumer Task Worker Queue** | `queue.Queue`, `threading.Thread`, Poison Pill shutdown pattern | [`25_producer_consumer_worker_queue.py`](./25_producer_consumer_worker_queue.py) |
+| **26** | **High-Scale Non-Blocking AsyncIO Health Scanner** | `asyncio`, `asyncio.Semaphore`, event loop cooperative multitasking | [`26_asyncio_mass_health_checker.py`](./26_asyncio_mass_health_checker.py) |
+| **28** | **Sliding Window Log Spike & SLA Anomaly Detector** | `collections.deque` sliding window in O(N), timestamp eviction | [`28_sliding_window_log_spike_detector.py`](./28_sliding_window_log_spike_detector.py) |
+| **29** | **Live Debugging: Race Condition & Deadlock Elimination** | Atomic operations, Coffman conditions, global lock acquisition ordering | [`29_concurrency_deadlock_race_condition_fix.py`](./29_concurrency_deadlock_race_condition_fix.py) |
 
 ---
 
 ## 💡 How to Practice
 
-Run any interview question directly with Python:
+Every single file is standalone and runnable with zero configuration:
 
 ```bash
-# Example: Run Question 01 (Log Parsing & Metrics)
-python interview-prep/01_parse_nginx_access_logs.py
+# Example 1: Run DAG Dependency Resolver (Topological Sort)
+python interview-prep/21_topological_sort_dag_dependency_resolver.py
 
-# Example: Run Question 12 (Retry Decorator with Backoff)
-python interview-prep/12_retry_decorator_with_exponential_backoff.py
+# Example 2: Run LRU Cache with TTL
+python interview-prep/22_lru_cache_with_ttl.py
 
-# Example: Run Question 18 (CIDR Subnet Bitwise Matching)
-python interview-prep/18_cidr_ip_range_validator.py
+# Example 3: Run Git Bisect Simulation
+python interview-prep/23_git_bisect_binary_search.py
 
-# Example: Run Question 20 (Token Bucket Rate Limiter)
-python interview-prep/20_rate_limiter_token_bucket.py
+# Example 4: Run Software Load Balancer
+python interview-prep/24_software_load_balancer.py
+
+# Example 5: Run Producer-Consumer Worker Queue
+python interview-prep/25_producer_consumer_worker_queue.py
+
+# Example 6: Run Transactional KV Store
+python interview-prep/27_in_memory_kv_store_with_transactions.py
+
+# Example 7: Run Sliding Window Spike Detector
+python interview-prep/28_sliding_window_log_spike_detector.py
+
+# Example 8: Run Race Condition & Deadlock Fix
+python interview-prep/29_concurrency_deadlock_race_condition_fix.py
+
+# Example 9: Run Cron Expression Parser
+python interview-prep/30_cron_expression_parser.py
 ```
